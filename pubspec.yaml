@@ -1,7 +1,8 @@
 name: theme_mode_manager
 description: "A simple package to help manage and persist ThemeMode in Flutter apps."
 version: 0.0.1
-homepage:
+homepage: https://github.com/a8909/Theme-handler
+repository: https://github.com/a8909/Theme-handler
 
 environment:
   sdk: ^3.9.2

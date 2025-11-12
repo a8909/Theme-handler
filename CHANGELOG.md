@@ -6,3 +6,6 @@
 - Saves and restores theme using `SharedPreferences`
 - Simple API: `themeModeInit()`, `setThemeMode()`, `defaultThemeMode`
 
+## 0.0.2
+- Added example app to the package.
+

@@ -3,15 +3,14 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ThemeModeHandler extends ChangeNotifier {
   static const _key = 'THEME_KEY';
-  late SharedPreferences _prefs;
-  ThemeMode defaultThemeMode = ThemeMode.system;
+  late ThemeMode defaultThemeMode; 
+  ThemeMode get loadedTheme => defaultThemeMode; //getter for the application theme
 
   /// Initialize the theme mode from SharedPreferences
   Future<void> themeModeInit() async {
-    _prefs = await SharedPreferences.getInstance();
-    final currentTheme = _prefs.getString(_key);
-
-    if (currentTheme != null) {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    final currentTheme = prefs.getString(_key);
+    if (currentTheme != null ) {
       switch (currentTheme) {
         case 'ThemeMode.light':
           defaultThemeMode = ThemeMode.light;
@@ -22,23 +21,26 @@ class ThemeModeHandler extends ChangeNotifier {
         default:
           defaultThemeMode = ThemeMode.system;
       }
+    } else {
+      defaultThemeMode = ThemeMode.light;
     }
     notifyListeners();
   }
 
   /// Update theme and persist it
   Future<void> setMode(ThemeMode mode) async {
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
     defaultThemeMode = mode;
     notifyListeners();
 
     if (mode == ThemeMode.system) {
-      await _prefs.remove(_key);
+      await prefs.remove(_key);
     } else {
-      await _prefs.setString(_key, mode.toString());
+      await prefs.setString(_key, mode.toString());
     }
   }
 
-    /// Public method to set theme mode
+  /// Public method to set theme mode
   void setThemeMode(ThemeMode thememode) {
     switch (thememode) {
       case ThemeMode.light:

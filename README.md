@@ -23,7 +23,7 @@ update the theme using setThemeMode().
 
 ## Usage
 
-THEME_MODE_MANAGER: Do not change the _key, both ios and andriod can use.
+THEME_MODE_MANAGER: Do not change the _key, both ios, android, web can use.
 import the package to the main.dart file of your application or whereever you want to use the package.
 
 <!-- dart -->
@@ -43,10 +43,10 @@ final ThemeModeHandler _themeHandler = ThemeModeHandler();
   To set the application themeMode ( light / dark ), use thus function:
   _themeHandler.setThemeMode(ThemeMode.dark);
 
-  finally you can set a themeColor of your choice in the main.dart material widget and use the color of your choice.
+  finally you can set a themeColor of your choice in the main.dart material widget, check the example to see usage
 
 
 
 ## Additional information
 
-TODO: To add features to the package just clone it and update the package with your code, please after adding your feature always update the test flle to run a proper test before pushing the package, update your commt with the feature you added. The package is expected to handle the flutter application theme manage with state-management .
+TODO: To add features to the package just clone it and update the package with your code, please after adding your feature always update the test flle to run a proper test before pushing the package, update your commt with the feature you added. The package is expected to handle the flutter application theme manage with state-management. Lastly, do not forget to update the CHANGELOG.md with new feature implemented.

@@ -8,8 +8,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:theme_mode_manager/example/lib/main.dart';
 import 'package:theme_mode_manager/theme_mode_manager.dart';
+import 'package:theme_mode_manager_example/main.dart';
 
 void main() {
   testWidgets('Application ThemeMode test ', (WidgetTester tester) async {
